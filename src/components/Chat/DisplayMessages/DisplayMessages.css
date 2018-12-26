@@ -6,14 +6,16 @@
 .individual-message {
 	display: inline-block;
 	width: auto;
+	max-width: 80%;
 	line-height: 40px;
 	font-size: 0px;
-	padding: 5px 5px;
+	padding: 0px 5px;
+	padding-top: 5px;
 }
 .individual-message .avatar {
 	display: inline-block;
 	width: 40px;
-	margin: 5px 10px;
+	margin: 1px 10px;
 	height: 40px;
 	text-transform: uppercase;
 	text-align: center;
@@ -22,12 +24,25 @@
 	font-size: 16px;
 	vertical-align: top;
 }
+.individual-message.same {
+	padding: 0 5px;
+}
+.individual-message.same .avatar {
+	background: transparent;
+	color: transparent;
+	margin: 1px 10px;
+}
+.individual-message.same .message-text {
+	margin: 1px 0;
+}
 .individual-message .message-text {
+	min-width: 75px;
+	text-align: center;
 	vertical-align: top;
 	display: inline-block;
 	font-size: 16px;
 	padding: 0 20px;
-	margin: 5px 0;
+	margin: 1px 0;
 	box-sizing: border-box;
 	background: rgb(250, 220, 56);
 	border-radius: 20px;
@@ -49,4 +64,10 @@
 	margin: 0 10%;
 	text-align: center;
 	background: #f5f5f5;
+}
+.self {
+	text-align: right;
+}
+.self .message-text {
+	background: rgb(152, 240, 0);
 }

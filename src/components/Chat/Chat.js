@@ -39,7 +39,7 @@ export default class Chat extends Component {
 					<div className="message-bar">
 						<form onSubmit={this.send}>
 							<input
-								className="input"
+								className="message-input"
 								value={this.state.message}
 								onChange={this.onChange}
 							/>

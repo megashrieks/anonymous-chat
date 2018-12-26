@@ -47,7 +47,16 @@ class ChatContextProvider extends Component {
 	};
 	sendMessage = value => {
 		return new Promise((resolve, reject) => {
-			if (!this.state.groupId.length) reject(new Error("No group id"));
+			if (!this.state.groupId.length || !this.state.username.length)
+				reject(new Error("No group id or username"));
+			var current = {
+				value,
+				username: this.state.username,
+				owner: true
+			};
+			this.setState(prev => {
+				return { history: prev.history.concat(current) };
+			});
 			socket.emit("send", {
 				groupId: this.state.groupId,
 				username: this.state.username,

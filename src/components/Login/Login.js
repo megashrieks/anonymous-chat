@@ -29,16 +29,20 @@ export default class Login extends Component {
 	render() {
 		return (
 			<div className="centered">
-				<input
-					className="input"
-					value={this.context.groupId}
-					onChange={this.onChange}
-				/>
-				<input
-					className="input"
-					value={this.context.username}
-					onChange={this.changeName}
-				/>
+				<div>
+					<input
+						className="input"
+						value={this.context.groupId}
+						onChange={this.onChange}
+					/>
+				</div>
+				<div>
+					<input
+						className="input"
+						value={this.context.username}
+						onChange={this.changeName}
+					/>
+				</div>
 				<Button color="info" size="small" onClick={this.generateId}>
 					Generate and join chat
 				</Button>
