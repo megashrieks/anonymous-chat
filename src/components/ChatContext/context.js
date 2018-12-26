@@ -4,8 +4,8 @@ const Context = React.createContext();
 var socket;
 class ChatContextProvider extends Component {
 	state = {
-		groupId: "initial",
-		username: "",
+		groupId: "",
+		username: "anonymouse devil",
 		history: []
 	};
 	constructor(props) {
@@ -25,14 +25,20 @@ class ChatContextProvider extends Component {
 		});
 	};
 	changeGroupId = value => {
+		let history = this.state.history;
+		if (this.state.groupId !== value) history = [];
 		this.setState({
-			groupId: value
+			groupId: value,
+			history
 		});
 	};
 	joinChat = () => {
 		return new Promise((res, rej) => {
 			try {
-				socket.emit("join", this.state.groupId);
+				socket.emit("join", {
+					groupId: this.state.groupId,
+					username: this.state.username
+				});
 				res();
 			} catch (e) {
 				rej(e);
@@ -43,8 +49,9 @@ class ChatContextProvider extends Component {
 		return new Promise((resolve, reject) => {
 			if (!this.state.groupId.length) reject(new Error("No group id"));
 			socket.emit("send", {
+				groupId: this.state.groupId,
 				username: this.state.username,
-				message: value
+				value
 			});
 			resolve(true);
 		});

@@ -4,12 +4,3 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-.input-group-id {
-	width: 100%;
-	height: 40px;
-	border: 0;
-	background: #eee;
-	padding: 5px 10px;
-	margin: 10px 0;
-	outline: none;
-}
