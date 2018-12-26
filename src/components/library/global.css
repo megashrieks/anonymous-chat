@@ -1,0 +1,12 @@
+.padded-container {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.padded-container.horizontal {
+	padding: 0 10px;
+}
+.padded-container.vertical {
+	padding: 10px 0;
+}
