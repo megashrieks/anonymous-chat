@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./DisplayMessages.css";
 function Message({ username, value, renderAvatar }) {
 	var avatarImageClass = "";
-	if (!renderAvatar) avatarImageClass = " " + "same";
+	if (!renderAvatar) avatarImageClass = " same";
 	return (
 		<div>
 			<div className={"individual-message" + avatarImageClass}>
@@ -21,7 +21,7 @@ function Info({ value }) {
 }
 function SelfMessage({ value, renderAvatar }) {
 	var avatarImageClass = "";
-	if (!renderAvatar) avatarImageClass = " " + "same";
+	if (!renderAvatar) avatarImageClass = " same";
 	return (
 		<div className="self">
 			<div className={"individual-message" + avatarImageClass}>
@@ -67,7 +67,7 @@ export default class DefaultMessages extends Component {
 							);
 						}
 					}
-					if (previousMessageUser == element.username)
+					if (previousMessageUser === element.username)
 						return <Message key={index} {...element} />;
 					else {
 						previousMessageUser = element.username;

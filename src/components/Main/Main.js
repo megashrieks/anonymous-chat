@@ -8,7 +8,7 @@ export default function Main() {
 		<BrowserRouter>
 			<ChatContextProvider>
 				<Switch>
-					<Route path="/chat" component={Chat} />
+					<Route path="/chat/:groupid" component={Chat} />
 					<Route path="/" component={Login} />
 				</Switch>
 			</ChatContextProvider>
